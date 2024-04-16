@@ -15,15 +15,15 @@
 .form textarea,
 .form select {
     padding: 30px;
-    background-color: transparent;
+    background-color: var(--bg);
     color: var(--text);
-    border: 2px solid #2e374a;
+    border: none;
     border-radius: 5px;
     margin-bottom: 30px;
 
 }
 
-.form input {
+.form input, .form select{
     width: 45%;
 }
 
