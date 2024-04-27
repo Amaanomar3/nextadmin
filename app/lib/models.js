@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema({
         min : 3,
         max : 50
     },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
     password: {
         type: String,
         required: true,
@@ -53,7 +57,7 @@ const productSchema = new mongoose.Schema({
 
     },
     price: {
-        type: number,
+        type: Number,
         required: true,
         min: 0,
     },
@@ -61,15 +65,15 @@ const productSchema = new mongoose.Schema({
         type: String,
     },
     color: {
-        type: Boolean,
-        default: false
+        type: String,
     },
     size: {
-        type: Boolean,
-        default: true
+        type: Number,
+        min: 0,
     },
     stock: {
-        type: String,
+        type: Number,
+        min: 0,
     },
 },
 {
