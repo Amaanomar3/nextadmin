@@ -15,6 +15,28 @@ export const fetchUsers = async (q, page) => {
         console.error('Error fetching users: ', error)
     }
 }
+
+export const fetchUser = async (id) => {
+
+    try {
+        connectToDB()
+        const user = await User.findById(id)
+        return user
+    } catch (error) {
+        console.error('Error fetching user: ', error)
+    }
+}
+
+export const fetchProduct = async (id) => {
+
+    try {
+        const product = await Product.findById(id)
+        return product
+    } catch (error) {
+        console.error('Error fetching user: ', error)
+    }
+}
+
 export const fetchProducts = async (q, page) => {
 
     const ITEM_PER_PAGE = 5

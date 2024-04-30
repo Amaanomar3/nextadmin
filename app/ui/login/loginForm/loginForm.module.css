@@ -1,4 +1,4 @@
-.container{
+.container {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -6,7 +6,7 @@
     justify-content: center;
 }
 
-.form{
+.form {
     background-color: var(--bgSoft);
     padding: 50px;
     border-radius: 10px;
@@ -19,16 +19,16 @@
     gap: 30px;
 }
 
-.form input{
+.form input {
     padding: 30px;
-    border :2px solid #2e374a;
+    border: 2px solid #2e374a;
     border-radius: 5px;
     background-color: var(--bg);
     width: 100%;
     color: var(--text);
 }
 
-.form button{
+.form button {
     width: 100%;
     padding: 20px;
     background-color: teal;
