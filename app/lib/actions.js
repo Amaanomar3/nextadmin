@@ -5,6 +5,7 @@ import { connectToDB } from "./utils";
 import { redirect } from "next/navigation";
 import bcrypt from "bcrypt";
 import { signIn } from "../auth";
+import { isRedirectError } from "next/dist/client/components/redirect";
 
 export const addUser = async (formData) => {
   const { username, email, password, phone, address, isAdmin, isActive } =
@@ -142,6 +143,9 @@ export const authenticate = async (prevState, formData) => {
   try {
     await signIn("credentials", { username, password });
   } catch (error) {
-    return error.message;
+    if (isRedirectError(error)) {
+      throw error;
+    }
+    return "Wrong username or password";
   }
 };
